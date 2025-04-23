@@ -5,8 +5,10 @@ type AllType = {
     weight: number
   }
   
-  function compare  (top: any, bottom: any): AllType {
-    type Info = Pick<AllType, 'name' | 'position' | 'color' | 'weight'>;
+  function compare <
+  T extends Pick<AllType, "name" | "color">,
+  S extends Pick<AllType, "position" | "weight">
+>(top: T, bottom: S): AllType {
     return {
       name: top.name,
       color: top.color,
@@ -15,4 +17,14 @@ type AllType = {
     }
   }
 
-  console.log(compare(1, 2));
+  export const top: Pick<AllType, "name" | "color"> = {
+    name: "x",
+    color: "#fff",
+  };
+  
+  export const bottom: Pick<AllType, "position" | "weight"> = {
+    position: 20,
+    weight: 20,
+  };
+  
+console.log(compare(top, bottom));

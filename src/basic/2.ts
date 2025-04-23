@@ -1,2 +1,3 @@
-let person: (string| number)[] = ['Max', 21];
+export let person: [string, number] 
+person = ['Max', 21];
 console.log(person);

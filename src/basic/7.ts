@@ -21,6 +21,7 @@ type Page3 = {
     likes: number,
     accounts: string[],
     status: string,
+    details?: Date [];
 }  
 
 const page : Page3[] = [

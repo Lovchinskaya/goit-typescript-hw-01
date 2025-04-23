@@ -18,6 +18,7 @@ type User = {
     name:  string;
     age: number;
     email: string;
+    address?: string [];
 }
 
 const users: User[] = [
